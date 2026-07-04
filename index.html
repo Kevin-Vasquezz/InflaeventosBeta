@@ -48,7 +48,7 @@
     #mobile-menu.open a:nth-child(5) { transition-delay: 0.25s; }
     #mobile-menu.open a:nth-child(6) { transition-delay: 0.30s; }
     nav a { position: relative; }
-    nav a::after {
+    nav a.enlace::after {
       content: '';
       position: absolute;
       bottom: -2px;
@@ -66,15 +66,15 @@
 <!-- NAVBAR -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/5 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
-    <a href="#" class="block"><img src="public/images/logo.jpeg" alt="INFLA EVENTOS SV" class="h-10 w-auto"></a>
+    <a id="logo" href="#" class="block"><img src="public/images/logo.jpeg" alt="INFLA EVENTOS SV" class="h-10 w-auto"></a>
 
     <!-- MENÚ ESCRITORIO (oculto en móvil) -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="#servicios" class="text-gris-oscuro hover:text-fucsia transition-colors duration-200">Servicios</a>
-      <a href="#paquetes" class="text-gris-oscuro hover:text-fucsia transition-colors duration-200">Paquetes</a>
-      <a href="#portfolio" class="text-gris-oscuro hover:text-fucsia transition-colors duration-200">Portafolio</a>
-      <a href="#testimonios" class="text-gris-oscuro hover:text-fucsia transition-colors duration-200">Testimonios</a>
-      <a href="#cotizar" class="text-gris-oscuro hover:text-fucsia transition-colors duration-200">Cotización</a>
+      <a href="#servicios" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Servicios</a>
+      <a href="#paquetes" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Paquetes</a>
+      <a href="#portfolio" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Portafolio</a>
+      <a href="#testimonios" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Testimonios</a>
+      <a href="#cotizar" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Cotización</a>
     </div>
 
     <!-- BOTÓN HAMBURGUESA (solo en móvil) -->
@@ -114,7 +114,7 @@
       <h1 class="font-heading text-[clamp(28px,5vw,52px)] font-bold text-negro leading-tight mt-8 mb-5 uppercase tracking-wide">Decoración con Globos<br><span class="text-fucsia">de Calidad Estudio</span></h1>
     </div>
     <div data-aos="fade-up" data-aos-delay="300">
-      <p class="text-gris-oscuro/50 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Cada celebración merece un diseño único. Somos especialistas en decoración con globos para cumpleaños, bodas, baby showers, graduaciones y eventos corporativos en El Salvador.</p>
+      <p class="text-gris-oscuro/50 text-base md:text-lg max-w-2xl mx-auto mb-5 leading-relaxed">Cada celebración merece un diseño único. Somos especialistas en decoración con globos para cumpleaños, bodas, baby showers, graduaciones y eventos corporativos en El Salvador.</p>
     </div>
     <div data-aos="fade-up" data-aos-delay="400">
       <a href="https://wa.me/50360498761" class="inline-flex items-center gap-3 bg-fucsia text-white px-10 py-4 rounded-full text-lg font-heading font-bold uppercase tracking-wider no-underline shadow-lg hover:bg-fucsia-alt hover:-translate-y-0.5 transition-all duration-300">
@@ -179,9 +179,9 @@
       </div>
       <div class="bg-white rounded-2xl p-7 border border-transparent cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:border-fucsia hover:shadow-lg" data-aos="fade-up" data-aos-delay="0">
         <div class="w-14 h-14 bg-fucsia rounded-2xl flex items-center justify-center text-white mb-5"><i data-lucide="star" class="w-7 h-7"></i></div>
-        <h3 class="font-heading text-negro text-lg font-bold uppercase tracking-wide mb-1">Milestone</h3>
+        <h3 class="font-heading text-negro text-lg font-bold uppercase tracking-wide mb-1">15 años</h3>
         <div class="text-fucsia font-bold text-sm mb-3 font-heading">desde $180</div>
-        <p class="text-gris-oscuro/60 text-sm leading-relaxed">Cumpleaños hito (15, 30, 40, 50) con producción visual completa. Diseños sofisticados que honran el momento.</p>
+        <p class="text-gris-oscuro/60 text-sm leading-relaxed">15 años con producción visual completa. Diseños sofisticados que honran el momento.</p>
       </div>
       <div class="bg-white rounded-2xl p-7 border border-transparent cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:border-fucsia hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
         <div class="w-14 h-14 bg-fucsia rounded-2xl flex items-center justify-center text-white mb-5"><i data-lucide="diamond" class="w-7 h-7"></i></div>
@@ -210,7 +210,7 @@
     <div class="flex gap-2 justify-center flex-wrap mb-12 p-1.5 bg-gris-claro rounded-full max-w-fit mx-auto" data-aos="fade-up" id="tabs-container">
       <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-white transition-all duration-200 bg-fucsia" onclick="showTab('infantil',this)">Cumpleaños</button>
       <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('baby',this)">Baby Shower</button>
-      <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('milestone',this)">Milestone</button>
+      <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('fifteen',this)">15 años</button>
       <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('boda',this)">Bodas</button>
       <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('corp',this)">Corporativo</button>
     </div>
@@ -362,7 +362,7 @@
               <option>Cumpleaños infantil</option>
               <option>Baby Shower</option>
               <option>Graduación</option>
-              <option>Milestone (15/30/40/50)</option>
+              <option>15 años</option>
               <option>Boda</option>
               <option>Corporativo / Activación</option>
               <option>Otro</option>
@@ -445,7 +445,253 @@
 </a>
 
 <script>
-  const paquetesData={infantil:{label:'Cumpleaños',tiers:[{n:'Esencial',p:'desde $80',c:'bg-fucsia',items:['Arco orgánico mediano (1.5–2m)','3 colores coordinados','10-12 globos de helio','Setup en zona principal','Aprox. 120-150 globos total','1.5–2h de setup']},{n:'Signature',p:'desde $150',c:'bg-gradient-to-r from-fucsia to-[#8A1048]',feat:true,badge:'Más solicitado',items:['Arco orgánico grande (2–3m)','Backdrop simple para fotos','Número o letra gigante','20-25 globos de helio','Detalle en mesa de pastel','Aprox. 250-300 globos total','2.5–3h de setup']},{n:'Premium',p:'desde $250',c:'bg-negro',items:['Arco extendido (3–4m) o doble','Backdrop temático completo','Esculturas/personajes en globos','Letra/Número gigante con flores','30-40 globos de helio','Detalles en mesa, regalos, entrada','Aprox. 400-500 globos total']}]},baby:{label:'Baby Shower',tiers:[{n:'Esencial',p:'desde $120',c:'bg-fucsia',items:['Arco mediano paleta pastel','10-12 globos formato nube','Detalle en mesa de pastel/dulces','Setup en zona principal','Aprox. 130-160 globos total']},{n:'Signature',p:'desde $200',c:'bg-gradient-to-r from-fucsia to-[#8A1048]',feat:true,badge:'Más solicitado',items:['Arco grande (2–3m) pastel premium','Backdrop con nombre del bebé','Globos de helio en racimos','Letras gigantes nombre/iniciales','Detalle en mesa de actividades','Aprox. 270-330 globos total']},{n:'Premium',p:'desde $350',c:'bg-negro',items:['Arco extendido con flores naturales','Backdrop tipo editorial','Cuna o escultura central en globos','Letras 3D nombre del bebé','30-40 globos de helio','Decoración integral del salón','Aprox. 430-530 globos total']}]},milestone:{label:'Milestone',tiers:[{n:'Esencial',p:'desde $180',c:'bg-fucsia',items:['Arco mediano-grande (2–2.5m)','Número grande con la edad','15-18 globos de helio en racimos','Detalle en mesa de pastel','Aprox. 180-220 globos total']},{n:'Signature',p:'desde $300',c:'bg-gradient-to-r from-fucsia to-[#8A1048]',feat:true,badge:'Más solicitado',items:['Arco orgánico grande (2.5–3.5m)','Backdrop con números/letras','Globos de helio premium','Número gigante efecto metálico','Detalle en mesa principal','Aprox. 300-400 globos total']},{n:'Premium',p:'desde $500',c:'bg-negro',items:['Arco premium extendido (3–5m)','Backdrop y escenario completo','Número 3D con iluminación','40-50 globos de helio','Decoración integral sala completa','Personalización total','Aprox. 500-650 globos total']}]},boda:{label:'Bodas',tiers:[{n:'Esencial',p:'desde $600',c:'bg-fucsia',items:['Arco nupcial orgánico (2–3m)','Mix globos con flores naturales','Centros de mesa (hasta 6)','Acceso y bienvenida','Aprox. 200-300 globos total']},{n:'Signature',p:'desde $1000',c:'bg-gradient-to-r from-fucsia to-[#8A1048]',feat:true,badge:'Más solicitado',items:['Arco grande premium (3–4m) floral','Backdrop ceremonia','Centros de mesa (hasta 12)','Señalética decorativa','Detalle en mesa de regalos','Aprox. 400-500 globos total']},{n:'Premium',p:'desde $1400',c:'bg-negro',items:['Arco gran formato + pista floral','Backdrop ceremonia + recepción','Centros de mesa completo','Decoración integral del salón','Globos de helio sueltos en techo','Detalles en barra, entrada, pista','Aprox. 700-900 globos total']}]},corp:{label:'Corporativo',tiers:[{n:'Esencial',p:'desde $400',c:'bg-fucsia',items:['Arco corporativo (2–2.5m)','Colores de marca','Globos de helio','Setup en lobby o escenario','Aprox. 120-180 globos total']},{n:'Signature',p:'desde $700',c:'bg-gradient-to-r from-fucsia to-[#8A1048]',feat:true,badge:'Recomendado',items:['Arco corporativo con logo (3m)','Backdrop con marca','Globos de helio premium','Escultura o figuras 3D','Fotocabin sencillo','Aprox. 300-400 globos total']},{n:'Premium',p:'desde $1200',c:'bg-negro',items:['Arco monumental 4–5m + logo','Backdrop editorial con iluminación','Esculturas y tótems de marca','Globos de helio en techo','Fotocabin completo','Diseño integral del espacio','Aprox. 600-800 globos total']}]}};
+  const paquetesData = {
+    infantil: {
+      label: "Cumpleaños",
+      tiers: [
+        {
+          n: "Esencial",
+          p: "desde $80",
+          c: "bg-fucsia",
+          items: [
+            "Arco de 3 metros",
+            "3 colores coordinados",
+            "4 torres de globos",
+            "12 globos con helio",
+            "Decoración con 300 globos",
+            "1.5 – 2h de setup"
+          ]
+        },
+        {
+          n: "Signature",
+          p: "desde $169",
+          c: "bg-gradient-to-r from-fucsia to-[#8A1048]",
+          feat: true,
+          badge: "Más solicitado",
+          items: [
+            "Arco de 3 metros",
+            "4 colores coordinados",
+            "6 torres de globos",
+            "Backdrop para fotos",
+            "Número o letra gigante",
+            "20 globos con helio",
+            "Decoración con 400 globos",
+            "2.5 - 3h de setup"
+          ]
+        },
+        {
+          n: "Premium",
+          p: "desde $299",
+          c: "bg-negro",
+          items: [
+            "Arco de 3 metros",
+            "4 colores coordinados",
+            "8 torres de globos",
+            "Backdrop para fotos",
+            "Letras y números gigantes",
+            "30 globos con helio",
+            "Decoración con 600 globos",
+            "5 centros de mesa",
+            "Postres (20 mini tartaletas)"
+          ]
+        }
+      ]
+    },
+
+    baby: {
+      label: "Baby Shower",
+      tiers: [
+        {
+          n: "Esencial",
+          p: "desde $129",
+          c: "bg-fucsia",
+          items: [
+            "Arco de 3 metros",
+            "3 colores coordinados",
+            "2 torres de globos en forma de biberón",
+            "5 chupetes decorativos de globos",
+            "Decoración con 300 globos",
+            "1.5 – 2h de setup"
+          ]
+        },
+        {
+          n: "Signature",
+          p: "desde $229",
+          c: "bg-gradient-to-r from-fucsia to-[#8A1048]",
+          feat: true,
+          badge: "Más solicitado",
+          items: [
+            "Arco de 3 metros",
+            "4 colores coordinados",
+            "4 torres de globos en forma de biberón",
+            "10 chupetes decorativos de globos",
+            "10 globos con helio",
+            "Backdrop para fotos",
+            "Decoración con 400 globos",
+            "2.5 – 3h de setup"
+          ]
+        },
+        {
+          n: "Premium",
+          p: "desde $349",
+          c: "bg-negro",
+          items: [
+            "Arco de 3 metros",
+            "4 colores coordinados",
+            "6 torres de globos en forma de biberón",
+            "15 chupetes decorativos de globos",
+            "20 globos con helio",
+            "Backdrop para fotos",
+            "Decoración con 600 globos",
+            "5 centros de mesa",
+          ]
+        }
+      ]
+    },
+
+    fifteen : {
+      label: "15 años",
+      tiers: [
+        {
+          n: "Esencial",
+          p: "desde $180",
+          c: "bg-fucsia",
+          items: [
+            "Arco mediano-grande (2–2.5m)",
+            "Número grande con la edad",
+            "15-18 globos de helio en racimos",
+            "Detalle en mesa de pastel",
+            "Aprox. 180-220 globos total"
+          ]
+        },
+        {
+          n: "Signature",
+          p: "desde $300",
+          c: "bg-gradient-to-r from-fucsia to-[#8A1048]",
+          feat: true,
+          badge: "Más solicitado",
+          items: [
+            "Arco orgánico grande (2.5–3.5m)",
+            "Backdrop con números/letras",
+            "Globos de helio premium",
+            "Número gigante efecto metálico",
+            "Detalle en mesa principal",
+            "Aprox. 300-400 globos total"
+          ]
+        },
+        {
+          n: "Premium",
+          p: "desde $500",
+          c: "bg-negro",
+          items: [
+            "Arco premium extendido (3–5m)",
+            "Backdrop y escenario completo",
+            "Número 3D con iluminación",
+            "40-50 globos de helio",
+            "Decoración integral sala completa",
+            "Personalización total",
+            "Aprox. 500-650 globos total"
+          ]
+        }
+      ]
+    },
+
+    boda: {
+      label: "Bodas",
+      tiers: [
+        {
+          n: "Esencial",
+          p: "desde $600",
+          c: "bg-fucsia",
+          items: [
+            "Arco nupcial orgánico de 3 metros",
+            "Mix globos con flores naturales",
+            "Centros de mesa (hasta 6)",
+            "Acceso y bienvenida",
+            "Decoración con 300 globos"
+          ]
+        },
+        {
+          n: "Signature",
+          p: "desde $1000",
+          c: "bg-gradient-to-r from-fucsia to-[#8A1048]",
+          feat: true,
+          badge: "Más solicitado",
+          items: [
+            "Arco grande premium de 4 metros",
+            "Backdrop ceremonia",
+            "Cnetros de mesa (hasta 12)",
+            "Señalética decorativa",
+            "Detalle en mesa de regalos",
+            "Decoración con 500 globos"
+          ]
+        },
+        {
+          n: "Premium",
+          p: "desde $1400",
+          c: "bg-negro",
+          items: [
+            "Arco grande premium de 4 metros",
+            "Pista floral",
+            "Backdrop ceremonia + recepción",
+            "Centros de mesa completo",
+            "Decoración integral del salón",
+            "Globos de helio sueltos en techo",
+            "Detalles en barra, entrada, pista",
+            "Decoración con 900 globos total"
+          ]
+        }
+      ]
+    },
+
+    corp: {
+      label: "Corporativo",
+      tiers: [
+        {
+          n: "Esencial",
+          p: "desde $600",
+          c: "bg-fucsia",
+          items: [
+            "Arco corporativo de 3 metros",
+            "Colores de marca",
+            "Globos de helio",
+            "Setup en lobby o escenario",
+            "Decoración con 300 globos total"
+          ]
+        },
+        {
+          n: "Signature",
+          p: "desde $1000",
+          c: "bg-gradient-to-r from-fucsia to-[#8A1048]",
+          feat: true,
+          badge: "Recomendado",
+          items: [
+            "Arco corporativo con logo de 3 metros",
+            "Backdrop con marca",
+            "Globos de helio premium",
+            "Escultura o figuras 3D",
+            "Fotocabin sencillo",
+            "Decoración con 500 globos total"
+          ]
+        },
+        {
+          n: "Premium",
+          p: "desde $1500",
+          c: "bg-negro",
+          items: [
+            "Arco monumental 4 metros + logo",
+            "Backdrop editorial con iluminación",
+            "Esculturas y tótems de marca",
+            "Globos de helio en techo",
+            "Fotocabin completo",
+            "Diseño integral del espacio",
+            "Decoración con 900 globos"
+          ]
+        }
+      ]
+    }
+  };
+
   let currentTab='infantil';
 
   function renderPaquetes(cat){const d=paquetesData[cat];if(!d)return;const c=document.getElementById('paquetes-container');c.innerHTML='';d.tiers.forEach(t=>{const card=document.createElement('div');card.className='bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col'+(t.feat?' border-3 border-fucsia scale-[1.02] md:scale-105':'');
