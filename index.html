@@ -28,7 +28,7 @@
       * { scroll-behavior: smooth; }
       .tab-content { display: none; }
       .tab-content.active { display: grid; }
-      #navbar.scrolled { background: rgba(13,13,13,0.95) !important; border-color: rgba(255,255,255,0.05) !important; }
+      #navbar.scrolled { background: black !important; border-color: rgba(255,255,255,0.05) !important; }
       #navbar.scrolled a { color: white !important; }
       #navbar.scrolled a:hover { color: #FE3C81 !important; }
       #navbar.scrolled #menu-btn .bar { background-color: white; }
@@ -76,7 +76,6 @@
           <a href="#portfolio" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Portafolio</a>
           <a href="#testimonios" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Testimonios</a>
           <a href="#cotizar" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">Cotización</a>
-          <a href="#cotizar" class="enlace text-gris-oscuro hover:text-fucsia transition-colors duration-200">vasquez</a>
         </div>
 
         <!-- BOTÓN HAMBURGUESA (solo en móvil) -->
@@ -203,12 +202,23 @@
           <h2 class="font-heading text-[clamp(32px,5vw,48px)] font-bold text-negro uppercase mb-5 tracking-wide">Elegí tu nivel</h2>
           <p class="text-gris-oscuro/60 text-base leading-relaxed">Esencial, Signature o Premium. Elegí el nivel y nosotros personalizamos el diseño según tu tema, paleta y locación.</p>
         </div>
-        <div class="flex gap-2 justify-center flex-wrap mb-12 p-1.5 bg-gris-claro rounded-full max-w-fit mx-auto" data-aos="fade-up" id="tabs-container">
+        <div class="hidden md:flex gap-2 justify-center flex-wrap mb-12 p-1.5 bg-gris-claro rounded-full max-w-fit mx-auto" data-aos="fade-up" id="tabs-container">
           <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-white transition-all duration-200 bg-fucsia" onclick="showTab('infantil',this)">Cumpleaños</button>
-          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('baby',this)">Baby Shower</button>
-          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('fifteen',this)">15 años</button>
-          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('boda',this)">Bodas</button>
-          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200 hover:text-negro" onclick="showTab('corp',this)">Corporativo</button>
+          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200" onclick="showTab('baby',this)">Baby Shower</button>
+          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200" onclick="showTab('fifteen',this)">15 años</button>
+          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200" onclick="showTab('boda',this)">Bodas</button>
+          <button class="tab-btn px-5 py-2.5 border-none rounded-full font-heading font-semibold text-sm uppercase tracking-wider cursor-pointer text-gris-oscuro/50 transition-all duration-200" onclick="showTab('corp',this)">Corporativo</button>
+        </div>
+        <div class="md:hidden mb-12 max-w-xs mx-auto relative" data-aos="fade-up">
+          <select onchange="renderPaquetes(this.value)"
+            class="w-full p-3.5 pr-10 bg-gris-claro border-2 border-gray-200 rounded-full text-sm font-heading font-semibold uppercase tracking-wider bg-white text-negro focus:outline-none focus:border-fucsia appearance-none">
+            <option value="infantil">Cumpleaños</option>
+            <option value="baby">Baby Shower</option>
+            <option value="fifteen">15 años</option>
+            <option value="boda">Bodas</option>
+            <option value="corp">Corporativo</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-fucsia absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
         </div>
         <div id="paquetes-container" class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"></div>
       </div>
@@ -350,39 +360,48 @@
               <label class="block font-heading font-semibold text-xs text-negro uppercase tracking-wider mb-2">Nombre completo <span class="text-fucsia">*</span></label>
               <input type="text" name="nombre" required placeholder="Ej. María Pérez" class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="mb-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="">
                 <label class="block font-heading font-semibold text-xs text-negro uppercase tracking-wider mb-2">Tipo de evento <span class="text-fucsia">*</span></label>
-                <select name="tipo" required class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
-                  <option value="">Seleccioná...</option>
-                  <option>Cumpleaños infantil</option>
-                  <option>Baby Shower</option>
-                  <option>Graduación</option>
-                  <option>15 años</option>
-                  <option>Boda</option>
-                  <option>Corporativo / Activación</option>
-                  <option>Otro</option>
-                </select>
+                <div class="relative">
+                  <select name="tipo" required class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all appearance-none">
+                    <option value="">Seleccioná...</option>
+                    <option>Cumpleaños infantil</option>
+                    <option>Baby Shower</option>
+                    <option>Graduación</option>
+                    <option>15 años</option>
+                    <option>Boda</option>
+                    <option>Corporativo / Activación</option>
+                    <option>Otro</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="w-4 h-4 text-fucsia absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
               </div>
               <div class="mb-5">
                 <label class="block font-heading font-semibold text-xs text-negro uppercase tracking-wider mb-2">Paquete</label>
-                <select name="paquete" class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
-                  <option value="">Aún no decidido</option>
-                  <option>Esencial</option>
-                  <option>Signature</option>
-                  <option>Premium</option>
-                  <option>Cotización personalizada</option>
-                </select>
+                <div class="relative">
+                  <select name="paquete" class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all appearance-none">
+                    <option value="">Aún no decidido</option>
+                    <option>Esencial</option>
+                    <option>Signature</option>
+                    <option>Premium</option>
+                    <option>Cotización personalizada</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="w-4 h-4 text-fucsia absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
               </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="mb-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="">
                 <label class="block font-heading font-semibold text-xs text-negro uppercase tracking-wider mb-2">Fecha <span class="text-fucsia">*</span></label>
-                <input type="date" name="fecha" required class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
+                <div class="relative">
+                  <input type="date" name="fecha" required onclick="if(this.showPicker){this.showPicker()}" class="w-full h-[52px] pl-3.5 pr-10 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full">
+                  <i data-lucide="calendar" class="w-4 h-4 text-fucsia absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
               </div>
               <div class="mb-5">
                 <label class="block font-heading font-semibold text-xs text-negro uppercase tracking-wider mb-2">Zona</label>
-                <input type="text" name="zona" placeholder="Ej. Antiguo Cuscatlán" class="w-full p-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
+                <input type="text" name="zona" placeholder="Ej. Antiguo Cuscatlán" class="w-full h-[52px] px-3.5 border-2 border-gray-200 rounded-xl text-sm bg-white text-negro focus:outline-none focus:border-fucsia focus:ring-4 focus:ring-fucsia/10 transition-all">
               </div>
             </div>
             <div class="mb-5">
@@ -401,7 +420,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-negro text-white py-14 px-5">
+    <footer class="bg-black text-white py-14 px-5">
       <div class="max-w-6xl mx-auto grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 mb-10">
         <div>
           <a href="#"><img src="public/images/logo.jpeg" alt="INFLA EVENTOS SV" class="h-14 w-auto mb-3"></a>
@@ -699,7 +718,33 @@
 
       function showTab(id,btn){document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('bg-fucsia','text-white');b.classList.add('text-gris-oscuro/50')});btn.classList.add('bg-fucsia','text-white');btn.classList.remove('text-gris-oscuro/50');renderPaquetes(id);currentTab=id;}
 
-      function enviarWhatsApp(e){e.preventDefault();const f=e.target;const msg=encodeURIComponent('¡Hola INFLA! 🎈\n\nQuisiera cotizar un evento:\n\n👤 Nombre: '+f.nombre.value+'\n🎉 Tipo: '+f.tipo.value+'\n📦 Paquete: '+(f.paquete.value||'No definido aún')+'\n📅 Fecha: '+f.fecha.value+'\n📍 Zona: '+(f.zona.value||'No especificada')+'\n📱 WhatsApp: '+f.telefono.value+'\n\n💬 Detalles:\n'+(f.detalles.value||'Sin detalles adicionales'));window.open('https://wa.me/50360498761?text='+msg,'_blank');}
+      function enviarWhatsApp(e){
+        e.preventDefault();
+        const f = e.target;
+
+        const globo   = '\u{1F388}'; // 🎈
+        const persona = '\u{1F464}'; // 👤
+        const fiesta  = '\u{1F389}'; // 🎉
+        const caja    = '\u{1F4E6}'; // 📦
+        const fecha   = '\u{1F4C5}'; // 📅
+        const pin     = '\u{1F4CD}'; // 📍
+        const cel     = '\u{1F4F1}'; // 📱
+        const chat    = '\u{1F4AC}'; // 💬
+
+        const msg = encodeURIComponent(
+          `¡Hola INFLA! ${globo}\n\n` +
+          `Quisiera cotizar un evento:\n\n` +
+          `${persona} Nombre: ${f.nombre.value}\n` +
+          `${fiesta} Tipo: ${f.tipo.value}\n` +
+          `${caja} Paquete: ${f.paquete.value || 'No definido aún'}\n` +
+          `${fecha} Fecha: ${f.fecha.value}\n` +
+          `${pin} Zona: ${f.zona.value || 'No especificada'}\n` +
+          `${cel} WhatsApp: ${f.telefono.value}\n\n` +
+          `${chat} Detalles:\n${f.detalles.value || 'Sin detalles adicionales'}`
+        );
+        
+        window.open('https://wa.me/50360498761?text=' + msg, '_blank');
+      }
 
       if(typeof AOS!=='undefined')AOS.init({duration:600,once:true});
       lucide.createIcons();
