@@ -744,7 +744,7 @@
           `${chat} Detalles:\n${f.detalles.value || 'Sin detalles adicionales'}`
         );
         
-        window.open('https://wa.me/50360498761?text=' + msg, '_blank');
+        window.open('https://api.whatsapp.com/send?phone=50360498761&text=' + msg, '_blank');
       }
 
       if(typeof AOS!=='undefined')AOS.init({duration:600,once:true});
